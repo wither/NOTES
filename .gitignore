@@ -58,3 +58,7 @@ build-iPhoneSimulator/
 .obsidian/
 
 .gdb_history
+*.gpr
+*.lock
+*.lock*
+*.rep/
