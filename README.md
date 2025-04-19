@@ -1,5 +1,15 @@
-This is your new *vault*.
+# NOTES
 
-Make a note of something, [[create a link]], or try [the Importer](https://help.obsidian.md/Plugins/Importer)!
+A vault of my CTF notes.
 
-When you're ready, delete this note and make the vault your own.
+## [CSAW CTF](https://github.com/wither/NOTES/tree/main/CSAW)
+
+| Year | Challenge                                                            |
+| ---- | -------------------------------------------------------------------- |
+| 2018 | [bigboi](https://github.com/wither/NOTES/tree/main/CSAW/2018/bigboi) |
+
+## [TAMUctf](https://github.com/wither/NOTES/tree/main/TAMUctf)
+
+| Year | Challenge                                                           |
+| ---- | ------------------------------------------------------------------- |
+| 2019 | [pwn1](https://github.com/wither/NOTES/tree/main/TAMUctf/2019/pwn1) |
