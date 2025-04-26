@@ -8,7 +8,6 @@ Program leaks a stack address
 
 Yeah I'll have a 0xfff446b0 with a side of fries thanks
 
-
 ```
 
 NX disabled
